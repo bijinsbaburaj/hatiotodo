@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Project</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Create a New Project</h1>
+        
+        <form method="post">
+            {% csrf_token %}
+            <label for="title">Project Title:</label>
+            <input type="text" id="title" name="title" placeholder="Enter project title" required>
+
+            <button type="submit">Create Project</button>
+        </form>
+
+        <p><a href="{% url 'home' %}">Back to Projects</a></p>
+    </div>
+</body>
+</html>
